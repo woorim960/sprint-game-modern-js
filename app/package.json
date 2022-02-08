@@ -1,0 +1,12 @@
+{
+  "name": "sprint-game-for-amateur",
+  "version": "1.0.0",
+  "description": "100m 단거리 육상 게임 만들기",
+  "main": "init.js",
+  "scripts": {
+    "start": "node init.js"
+  },
+  "keywords": [],
+  "author": "우리밋_woorimIT",
+  "license": "MIT"
+}

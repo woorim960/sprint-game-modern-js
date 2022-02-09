@@ -1,12 +1,5 @@
-const Racers = [];
-const Racer = {
-  name: "",
-  raceRate: "",
-  conditionNumber: "",
-  go: function () {
-    this.raceRate += "-";
-  },
-};
+const Racers = require("../models/Racers");
+const Racer = require("../models/Racer");
 
 const RacerManager = {
   registerRacers: function (runners) {

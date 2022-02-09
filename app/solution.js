@@ -12,8 +12,8 @@
  * 6. 100m를 먼저 완주한 선수가 승리하며, 이때 "00 선수가 승리하였습니다." 를 출력하면서 게임은 종료된다.
  */
 
-const RaceManager = require("./services/controller/RaceManager");
-const RacerManager = require("./services/controller/RacerManager");
+const RaceManager = require("./services/controllers/RaceManager");
+const RacerManager = require("./services/controllers/RacerManager");
 
 function solution(runners) {
   // 여기서 게임을 만들어주세요.

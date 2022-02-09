@@ -1,7 +1,7 @@
 const { randomNum } = require("../../utils/Random"); // 랜덤 값 반환하는 함수
 const { waitMs } = require("../../utils/Timer"); // 인자의 ms 만큼 실행을 잠시 중지하는 함수
 
-const RaceBroadcaster = require("../utils/RaceBroadcaster");
+const RaceBroadcaster = require("../views/RaceBroadcaster");
 const RaceValidator = require("../utils/RaceValidator");
 
 const RaceManager = {

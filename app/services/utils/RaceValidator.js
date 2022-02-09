@@ -1,5 +1,4 @@
 const RacerValidator = require("./RacerValidator");
-const ErrorThrower = require("../utils/ErrorThrower");
 const { FunctionRequiredArgumentsError } = require("../../utils/Error");
 const { isNumber, isArray } = require("../../utils/Validator");
 
@@ -26,8 +25,12 @@ const RaceValidator = {
    * @returns {Boolean}
    */
   isRaceOver: function (racers) {
-    ErrorThrower.throwFunctionRequiredArgumentsError(1, arguments.length);
-    ErrorThrower.throwTypeError(racers, "RaceValidator.isRaceOver", isArray);
+    if (arguments.length !== 1)
+      throw new FunctionRequiredArgumentsError(1, arguments.length);
+    if (!isArray(racers))
+      throw new TypeError(
+        "RaceValidator.isRaceOver 메서드의 인자 타입은 배열이어야 합니다."
+      );
 
     const winners = [];
     for (let racer of racers) {

@@ -15,71 +15,82 @@
 const { randomNum } = require("./utils/Random"); // 랜덤 값 반환하는 함수
 const { waitMs } = require("./utils/Timer"); // 인자의 ms 만큼 실행을 잠시 중지하는 함수
 
+const Racers = [];
+const Racer = {
+  name: "",
+  raceRate: "",
+  conditionNumber: "",
+  go: function () {
+    this.raceRate += "-";
+  },
+};
+
+const RacerManager = {
+  registerRacers: function (runners) {
+    for (let runner of runners) {
+      const racer = { ...Racer };
+      racer.name = runner;
+
+      Racers.push(racer);
+    }
+    return Racers;
+  },
+};
+
+const RaceManager = {
+  startRace: function (racers) {
+    let gameCount = 0;
+    while (true) {
+      console.log(`\n:: ${++gameCount}번째 달리기 시도 ::`);
+      this.raceEachRacers(racers);
+
+      if (RaceValidator.isRaceOver(racers)) this.overRace(racers);
+      waitMs(500);
+    }
+  },
+  raceEachRacers: function (racers) {
+    for (let racer of racers) {
+      if (RaceValidator.isGo(randomNum(0, 9))) racer.go();
+      RaceBroadcaster.sayRaceInfo(racer);
+    }
+  },
+  overRace: function (racers) {
+    for (let racer of racers) {
+      if (racer.raceRate === "----------")
+        RaceBroadcaster.sayWinner(racer.name);
+    }
+
+    process.exit();
+  },
+};
+
+const RaceValidator = {
+  isGo: function (number) {
+    return number > 5;
+  },
+  isRaceOver: function (racers) {
+    const winners = [];
+    for (let racer of racers) {
+      if (racer.raceRate === "----------") winners.push(racer);
+    }
+
+    return !!winners.length;
+  },
+};
+
+const RaceBroadcaster = {
+  sayRaceInfo: function (racer) {
+    console.log(`${racer.name}: ${racer.raceRate}`);
+  },
+  sayWinner: function (winner) {
+    console.log(`${winner} 선수가 승리하였습니다.`);
+  },
+};
+
 function solution(runners) {
   // 여기서 게임을 만들어주세요.
-  const racers = getRacers(runners);
-  startRace(racers);
-}
-
-function startRace(racers) {
-  let gameCount = 0;
-  while (true) {
-    console.log(`\n:: ${++gameCount}번째 달리기 시도 ::`);
-    raceEachRacers(racers);
-
-    if (isRaceOver(racers)) overRace(racers);
-    waitMs(500);
-  }
-}
-
-function raceEachRacers(racers) {
-  for (let racer of racers) {
-    if (isCanGo(randomNum(0, 9))) racer.go();
-    printRaceInfo(racer);
-  }
-}
-
-function isRaceOver(racers) {
-  const winners = [];
-  for (let racer of racers) {
-    if (racer.raceRate === "----------") winners.push(racer);
-  }
-
-  return !!winners.length;
-}
-
-function overRace(racers) {
-  for (let racer of racers) {
-    if (racer.raceRate === "----------")
-      console.log(`${racer.name} 선수가 승리하였습니다.`);
-  }
-
-  process.exit();
-}
-
-function printRaceInfo(racer) {
-  console.log(`${racer.name}: ${racer.raceRate}`);
-}
-
-function isCanGo(number) {
-  return number > 5;
-}
-
-function getRacers(runners) {
-  const racers = [];
-  for (let runner of runners) {
-    const racer = {
-      name: runner,
-      raceRate: "",
-      conditionNumber: "",
-      go: function () {
-        this.raceRate += "-";
-      },
-    };
-
-    racers.push(racer);
-  }
-  return racers;
+  const racers = RacerManager.registerRacers(runners);
+  RaceManager.startRace(racers);
 }
 
 // ========================================

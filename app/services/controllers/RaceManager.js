@@ -8,7 +8,7 @@ const RaceManager = {
   startRace: function (racers) {
     let gameCount = 0;
     while (true) {
-      console.log(`\n:: ${++gameCount}번째 달리기 시도 ::`);
+      RaceBroadcaster.sayStartMessage(++gameCount);
       this.raceEachRacers(racers);
 
       if (RaceValidator.isRaceOver(racers)) this.overRace(racers);
@@ -23,8 +23,7 @@ const RaceManager = {
   },
   overRace: function (racers) {
     for (let racer of racers) {
-      if (racer.raceRate === "----------")
-        RaceBroadcaster.sayWinner(racer.name);
+      if (racer.isArrivedAtFinishLine()) RaceBroadcaster.sayWinner(racer.name);
     }
 
     process.exit();

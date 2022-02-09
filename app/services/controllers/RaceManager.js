@@ -16,13 +16,13 @@ const RaceManager = {
     }
   },
   raceEachRacers: function (racers) {
-    for (let racer of racers) {
+    for (const racer of racers) {
       if (RaceValidator.isGo(randomNum(0, 9))) racer.go();
       RaceBroadcaster.sayRaceInfo(racer);
     }
   },
   overRace: function (racers) {
-    for (let racer of racers) {
+    for (const racer of racers) {
       if (racer.isArrivedAtFinishLine()) RaceBroadcaster.sayWinner(racer.name);
     }
 

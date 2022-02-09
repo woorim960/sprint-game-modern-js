@@ -3,7 +3,7 @@ const Racer = require("../models/Racer");
 
 const RacerManager = {
   registerRacers: function (runners) {
-    for (let runner of runners) {
+    for (const runner of runners) {
       const racer = { ...Racer };
       racer.name = runner;
 

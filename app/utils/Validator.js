@@ -13,7 +13,7 @@ function isNumber(value) {
 }
 
 /**
- * 인자가 숫자 타입인지 검사한다.
+ * 인자가 배열 타입인지 검사한다.
  *
  * @param {*} value
  * @returns {boolean}

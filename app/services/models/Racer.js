@@ -5,6 +5,9 @@ const Racer = {
   go: function () {
     this.raceRate += "-";
   },
+  isArrivedAtFinishLine: function () {
+    return this.raceRate === "----------";
+  },
 };
 
 module.exports = Racer;

@@ -4,7 +4,7 @@ const solution = require("./solution");
 
 async function startGame() {
   try {
-    var runners = await input("달리기 선수를 입력해주세요.\n> ");
+    const runners = await input("달리기 선수를 입력해주세요.\n> ");
     solution(runners);
   } catch (e) {
     if (e instanceof InputError) {

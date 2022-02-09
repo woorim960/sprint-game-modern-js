@@ -103,6 +103,8 @@ $ npm start
 ## 👨🏻‍💻 프로그래밍 요구사항
 * 문제 풀이는 ```/app/solution.js``` 파일의 ```solution()``` 함수 안에서 하도록 한다.
   * 그래야만 기본 제공되는 입력폼을 이용할 수 있다.
+  * ```solution()```의 매개변수인 ```runner```가 사용자가 입력한 값이다.
+  * ```runner```는 사용자의 입력 값을 공백을 기준으로 구분하여 배열로 만들어진 값이다.
 ```js
 // /app/solution.js
 
@@ -124,7 +126,7 @@ function solution(runner) {
     function solution(runner) {
       // 여기서 게임을 만들어주세요.
       const number = randomNum(0, 9); // 0 - 9 사이의 값이 랜덤으로 반환된다. 
-      console.log(randomNumber); // 0 - 9 사이의 임의 값 출력
+      console.log(number); // 0 - 9 사이의 임의 값 출력
     }
     ```
     * [randomNum()의 구조 살펴보러가기](https://github.com/woorim960/sprint-game-modern-js/blob/master/app/utils/Random.js)

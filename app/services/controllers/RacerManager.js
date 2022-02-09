@@ -9,7 +9,7 @@ const RacerManager = {
 
       Racers.push(racer);
     }
-    return Racers;
+    return Racers.getAll();
   },
 };
 

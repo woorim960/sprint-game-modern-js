@@ -15,8 +15,8 @@ function waitMs(ms) {
     throw new TypeError("waitMs의 인자는 숫자 타입이어야 합니다.");
   }
 
-  var start = new Date().getTime();
-  var end = start;
+  const start = new Date().getTime();
+  let end = start;
   while (end < start + ms) {
     end = new Date().getTime();
   }

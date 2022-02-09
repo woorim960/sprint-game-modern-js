@@ -15,7 +15,7 @@ const RaceValidator = {
   isRaceOver: function (racers) {
     const winners = [];
     for (let racer of racers) {
-      if (racer.raceRate === "----------") winners.push(racer);
+      if (racer.isArrivedAtFinishLine()) winners.push(racer);
     }
 
     return !!winners.length;

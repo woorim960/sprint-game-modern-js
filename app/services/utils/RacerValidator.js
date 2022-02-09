@@ -4,8 +4,8 @@ const RacerValidator = {
    *
    * @returns {Boolean}
    */
-  isArrivedAtFinishLine: function () {
-    return this.raceRate === "----------";
+  isArrivedAtFinishLine: function (racer) {
+    return racer.raceRate === "----------";
   },
 };
 

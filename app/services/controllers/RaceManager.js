@@ -3,6 +3,7 @@ const { waitMs } = require("../../utils/Timer"); // 인자의 ms 만큼 실행�
 
 const RaceBroadcaster = require("../views/RaceBroadcaster");
 const RaceValidator = require("../utils/RaceValidator");
+const RacerValidator = require("../utils/RacerValidator");
 
 const RaceManager = {
   startRace: function (racers) {
@@ -23,7 +24,8 @@ const RaceManager = {
   },
   overRace: function (racers) {
     for (const racer of racers) {
-      if (racer.isArrivedAtFinishLine()) RaceBroadcaster.sayWinner(racer.name);
+      if (RacerValidator.isArrivedAtFinishLine(racer))
+        RaceBroadcaster.sayWinner(racer.name);
     }
 
     process.exit();

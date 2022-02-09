@@ -1,3 +1,4 @@
+const RacerValidator = require("./RacerValidator");
 const { FunctionRequiredArgumentsError } = require("../../utils/Error");
 const { isNumber, isArray } = require("../../utils/Validator");
 
@@ -33,7 +34,7 @@ const RaceValidator = {
 
     const winners = [];
     for (let racer of racers) {
-      if (racer.isArrivedAtFinishLine()) winners.push(racer);
+      if (RacerValidator.isArrivedAtFinishLine(racer)) winners.push(racer);
     }
 
     return !!winners.length;

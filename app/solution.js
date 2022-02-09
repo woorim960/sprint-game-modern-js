@@ -15,6 +15,9 @@
 const { randomNum } = require("./utils/Random"); // 랜덤 값 반환하는 함수
 const { waitMs } = require("./utils/Timer"); // 인자의 ms 만큼 실행을 잠시 중지하는 함수
 
+const RaceBroadcaster = require("./services/utils/RaceBroadcaster");
+const RaceValidator = require("./services/utils/RaceValidator");
+
 const Racers = [];
 const Racer = {
   name: "",
@@ -61,29 +64,6 @@ const RaceManager = {
     }
 
     process.exit();
-  },
-};
-
-const RaceValidator = {
-  isGo: function (number) {
-    return number > 5;
-  },
-  isRaceOver: function (racers) {
-    const winners = [];
-    for (let racer of racers) {
-      if (racer.raceRate === "----------") winners.push(racer);
-    }
-
-    return !!winners.length;
-  },
-};
-
-const RaceBroadcaster = {
-  sayRaceInfo: function (racer) {
-    console.log(`${racer.name}: ${racer.raceRate}`);
-  },
-  sayWinner: function (winner) {
-    console.log(`${winner} 선수가 승리하였습니다.`);
   },
 };
 

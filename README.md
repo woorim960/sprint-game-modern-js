@@ -8,8 +8,13 @@
 
 ## 🙋🏻‍♂️ 들어가며
 해답 코드는 [answer 브랜치](https://github.com/woorim960/sprint-game-modern-js/blob/answer-v1.0.0/app/solution.js)에 있으나, 이것만이 정답은 아니며 아래의 <a href="-기능-요구-사항">기능 요구 사항</a>을 만족하는 모든 경우가 정답입니다.  
-필히 본인 스스로 먼저 풀어본 뒤 [해답 코드](https://github.com/woorim960/sprint-game-modern-js/blob/answer-v1.0.0/app/solution.js)와 [풀이 강의]()를 참고하길 바랍니다.  
+필히 본인 스스로 먼저 풀어본 뒤 [해답 코드](https://github.com/woorim960/sprint-game-modern-js/tree/answer/app)와 [풀이 강의]()를 참고하길 바랍니다.  
 아마추어편의 **해답 코드**와 **풀이 강의**에서는 [모자아프](https://github.com/woorim960/modern-javascript-from-amateur-to-pro)의 아마추어편에서 배운 내용을 기반으로 한 풀이를 최대한 응용하여 어떻게하면 깔끔하고 좋은 코드를 구현할 수 있는지를 다룹니다.    
+
+### 해답 코드
+* [아마추어용 - 구조화 버전](https://github.com/woorim960/sprint-game-modern-js/tree/for-amateur.structured/app)
+* [아마추어용 - MVC 패턴을 이용한 객체지향 프로그래밍 버전: 객체만 이용](https://github.com/woorim960/sprint-game-modern-js/tree/for-amateur.oop/app)
+* [주니어용 - MVC 패턴을 이용한 객체지향 프로그래밍 버전: 생성자 함수 이용(미완)](https://github.com/woorim960/sprint-game-modern-js/tree/answer/app)
 
 ## 📍 문제 풀이 방법
 > 문제를 풀기 위해서는 [Node](https://nodejs.org/ko/)가 설치되어 있어야한다.

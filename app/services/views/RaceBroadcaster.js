@@ -3,8 +3,8 @@ const RaceBroadcaster = {
    *
    * @param {Object} racer
    */
-  sayRaceInfo: function (racer) {
-    console.log(`${racer.name}: ${racer.raceRate}`);
+  sayEachRacerStatus: function (name, rate) {
+    console.log(`${name}: ${rate}`);
   },
   /**
    *

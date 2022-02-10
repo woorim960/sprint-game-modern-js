@@ -19,13 +19,13 @@ const RaceManager = {
   raceEachRacers: function (racers) {
     for (const racer of racers) {
       if (RaceValidator.isGo(randomNum(0, 9))) racer.go();
-      RaceBroadcaster.sayRaceInfo(racer);
+      RaceBroadcaster.sayEachRacerStatus(racer.getName(), racer.getRaceRate());
     }
   },
   overRace: function (racers) {
     for (const racer of racers) {
       if (RacerValidator.isArrivedAtFinishLine(racer))
-        RaceBroadcaster.sayWinner(racer.name);
+        RaceBroadcaster.sayWinner(racer.getName());
     }
 
     process.exit();

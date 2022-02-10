@@ -2,7 +2,7 @@ const Racer = {
   _name: "",
   _raceRate: "",
   go: function () {
-    this.raceRate += "-";
+    this._raceRate += "-";
   },
   getName: function () {
     return this._name;

@@ -1,18 +1,20 @@
-const Racer = {
-  _name: "",
-  _raceRate: "",
-  go: function () {
-    this._raceRate += "-";
-  },
-  getName: function () {
-    return this._name;
-  },
-  setName: function (name) {
-    this._name = name;
-  },
-  getRaceRate: function () {
-    return this._raceRate;
-  },
-};
+function Racer() {
+  let _name = "";
+  let _raceRate = "";
+  return {
+    go: function () {
+      _raceRate += "-";
+    },
+    getName: function () {
+      return _name;
+    },
+    setName: function (name) {
+      _name = name;
+    },
+    getRaceRate: function () {
+      return _raceRate;
+    },
+  };
+}
 
 module.exports = Racer;

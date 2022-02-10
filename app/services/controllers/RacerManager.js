@@ -5,7 +5,7 @@ const RacerManager = {
   registerRacers: function (runners) {
     for (const runner of runners) {
       const racer = { ...Racer };
-      racer.name = runner;
+      racer.setName(runner);
 
       Racers.push(racer);
     }

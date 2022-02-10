@@ -1,11 +1,13 @@
-const Racers = {
-  _elements: [],
-  getAll: function () {
-    return this._elements;
-  },
-  push: function (racer) {
-    this._elements.push(racer);
-  },
-};
+function Racers() {
+  let _racers = [];
+  return {
+    getAll: function () {
+      return _racers;
+    },
+    push: function (racer) {
+      _racers.push(racer);
+    },
+  };
+}
 
 module.exports = Racers;

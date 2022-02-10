@@ -3,13 +3,14 @@ const Racer = require("../models/Racer");
 
 const RacerManager = {
   registerRacers: function (runners) {
+    const racers = new Racers();
     for (const runner of runners) {
       const racer = { ...Racer };
       racer.setName(runner);
 
-      Racers.push(racer);
+      racers.push(racer);
     }
-    return Racers.getAll();
+    return racers.getAll();
   },
 };
 

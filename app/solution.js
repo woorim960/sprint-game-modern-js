@@ -12,11 +12,12 @@
  * 6. 100m를 먼저 완주한 선수가 승리하며, 이때 "00 선수가 승리하였습니다." 를 출력하면서 게임은 종료된다.
  */
 
-const { randomNum } = require("../../utils/Random"); // 랜덤 값 반환하는 함수
-const { waitMs } = require("../../utils/Timer"); // 인자의 ms 만큼 실행을 잠시 중지하는 함수
+const { randomNum } = require("./utils/Random"); // 랜덤 값 반환하는 함수
+const { waitMs } = require("./utils/Timer"); // 인자의 ms 만큼 실행을 잠시 중지하는 함수
 
 function solution(runners) {
   // 여기서 게임을 만들어주세요.
+  console.log(runners);
 }
 
 // ========================================
